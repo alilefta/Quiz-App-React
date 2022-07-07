@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
+:root {
+	--karla: "Karla", sans-serif;
+	--inter: "inter", sans-serif;
+	--light-blue: #293264;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+	box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.quiz--app {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	/* height: 100vh; */
+	min-height: 700px;
+	/* margin-top: 10px; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.quiz--app > .quiz--page {
+	max-width: 700px;
+	min-height: 599px;
+	padding: 20px 5px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #f5f7fb;
+	background-image: url("./images/blobs_bottom.png"),
+		url("./images/blobs_top.png");
+	background-repeat: no-repeat, no-repeat;
+	background-position: bottom left, top right;
+	background-size: 180px, 240px;
 }
 
-.App-link {
-  color: #61dafb;
+.quiz--app > .quiz--page > .intro--header {
+	margin: 0;
+	font-family: var(--karla);
+	color: var(--light-blue);
+	font-weight: 700;
+	font-size: 32px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quiz--app > .quiz--page > .intro--description {
+	margin: 15px 0 50px 0;
+	font-family: var(--inter);
+	color: var(--light-blue);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
+}
+
+.quiz--app > .quiz--page > .intro--btn {
+	background-color: #4d5b9e;
+	color: #f5f7fb;
+	border-radius: 15px;
+	width: 193px;
+	height: 52px;
+	font-family: var(--inter);
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+}
+
+.quiz--app > .quiz--page > .quiz--questions {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	flex-direction: column;
+	max-width: 79%;
+	margin-bottom: 12px;
+}
+
+.quiz--app > .quiz--page > .quiz--questions > .question {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border-bottom: 0.8px solid #dbdef0;
+	margin: 5px 0;
+	padding: 2px 0 10px 2px;
+	max-width: 100%;
+}
+.quiz--app > .quiz--page > .quiz--questions > .question > .question--header {
+	color: #293264;
+	font-family: var(--karla);
+	font-weight: 700;
+	font-size: 20px;
+	margin: 0 0 9px 0;
+	text-align: left;
+	word-wrap: break-word;
+}
+.quiz--app > .quiz--page > .quiz--questions > .question > .question--choices {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 5px 0 10px 0;
+	flex-wrap: wrap;
+	gap: 9px;
+}
+.quiz--app
+	> .quiz--page
+	> .quiz--questions
+	> .question
+	> .question--choices
+	> button {
+	border: 1px solid #4d5b9e;
+	border-radius: 7.94239px;
+	background-color: transparent;
+	height: auto;
+	padding: 5px 9px;
+	font-family: var(--inter);
+	font-weight: 500;
+	/* margin-right: 12px; */
+	color: #293264;
+	font-size: 13px;
+	cursor: pointer;
+	min-width: 65.92px;
+}
+
+.quiz--app
+	> .quiz--page
+	> .quiz--questions
+	> .question
+	> .question--choices
+	> button.checked {
+	background-color: #d6dbf5;
+}
+.quiz--app > .quiz--page > .bottom {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: center;
+}
+.quiz--app > .quiz--page > .bottom > .check--answers--btn {
+	background-color: #4d5b9e;
+	color: #f5f7fb;
+	border-radius: 15px;
+	width: 141px;
+	height: 39px;
+	font-family: var(--inter);
+	font-style: normal;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 19px;
+	text-align: center;
+	border: none;
+
+	cursor: pointer;
+}
+
+.quiz--app > .quiz--page > .bottom > .quiz--score {
+	font-weight: 500;
+	font-family: var(--inter);
+	margin: 0 15px 0 0;
+	font-size: 1.1em;
+}
+.attention--msg {
+	visibility: none;
+	position: absolute;
+	top: 0;
+	background-color: #4d5b9e;
+	opacity: 0;
+	color: #d6dbf5;
+}
+
+.attention--msg.show {
+	visibility: visible;
+	opacity: 1;
+}
+
+@media screen and (max-width: 400px) {
+	.quiz--app > .quiz--page > .intro--btn {
+		width: 130px;
+		height: 49px;
+	}
 }
