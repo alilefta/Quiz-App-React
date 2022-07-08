@@ -7,7 +7,6 @@ export default function Quiz() {
 	const [checkedAnswers, setCheckedAnswers] = useState(false);
 	const [scores, setScores] = useState(0);
 	const [playAgain, setPlayAgian] = useState(false);
-	const [errorMsg, setErrorMsg] = useState(false);
 	useEffect(() => {
 		fetch(
 			"https://opentdb.com/api.php?amount=5&category=18&difficulty=medium&type=multiple"

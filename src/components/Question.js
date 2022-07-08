@@ -80,6 +80,7 @@ export default function Question(props) {
 										opacity: getOpacity(choiceId),
 									}}
 									key={nanoid()}
+									// Try to change it if user clicked the same component twice ,toggling choice
 									onClick={(event) =>
 										!props.checkedAnswers
 											? chooseAnswer(event, props.data.question, choiceId)
